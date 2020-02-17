@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define fast ios_base::sync_with_stdio(0),cin.tie(0)
+#define ll long long
+#define LL unsigned ll
+#define pb push_back
+#define pi pair<int,int>
+long double PI =3.14159265358979323846;
+ 
+const ll M=1e9+7;
+const ll inf=1e18;
+const ll ms=2e5+1;
+
+
+int bin_sear(int l,int r,vector<int>ar)
+{
+    while(r-l>1)
+    {
+        int mid=l+(r-l)/2;
+        if(ar[mid]<ar[mid+1])
+            l=mid;
+        else
+            r=mid;
+    }
+    return r;
+}
+int main()
+{
+    fast;
+    vector<int> ar{7,3,2,1,};
+    cout<<bin_sear(-1,ar.size()-1,ar);
+    return 0;
+}
