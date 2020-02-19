@@ -1,0 +1,12 @@
+int bin_sear(int l,int h,vector<int> vc)
+    {
+        while(h-l>1)
+        {
+            int m=l+(h-l)/2;
+            if(vc[m]==1)
+                l=m;
+            else
+                h=m;
+        }
+        return l+1;
+    }
