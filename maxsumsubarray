@@ -1,0 +1,12 @@
+int maxSumSubArray(vector<int> dp ,int n, int k){
+    int maxi = INT_MIN,sum=0;
+    set<int>st;st.insert(0);
+    for(int i=0;i<n;i++){
+        sum += dp[i];
+        auto gap = st.upper_bound(sum-k);
+        if(gap!=st.end() )
+            maxi = max(maxi, sum-*gap );
+        st.insert(sum);
+    }
+    return maxi;
+}
